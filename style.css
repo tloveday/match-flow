@@ -1,6 +1,7 @@
-/* =========================
-   MATCH FLOW v0.2
-========================= */
+/* ===================================================
+   MATCH FLOW v1.0
+   Cardigan Town FC Tournament Display
+=================================================== */
 
 *{
     margin:0;
@@ -8,29 +9,27 @@
     box-sizing:border-box;
 }
 
+html,
 body{
+
+    height:100%;
+    overflow:hidden;
 
     font-family:Arial, Helvetica, sans-serif;
 
-    background:#efefef;
-
-    height:100vh;
-
-    display:flex;
-
-    flex-direction:column;
+    background:#ececec;
 
 }
 
-/* =========================
+/* ===================================================
    HEADER
-========================= */
+=================================================== */
 
 header{
 
-    height:80px;
+    height:85px;
 
-    background:white;
+    background:#ffffff;
 
     border-bottom:5px solid #d71920;
 
@@ -42,17 +41,27 @@ header{
 
     padding:0 30px;
 
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+}
+
+.logo{
+
+    display:flex;
+
+    flex-direction:column;
+
 }
 
 .logo h1{
 
     font-size:34px;
 
+    color:#111;
+
     text-transform:uppercase;
 
     letter-spacing:2px;
-
-    color:#111;
 
 }
 
@@ -62,17 +71,15 @@ header{
 
     font-size:14px;
 
+    margin-top:4px;
+
 }
 
 .crest{
 
-    width:70px;
+    width:72px;
 
-    height:70px;
-
-    background:#111;
-
-    color:white;
+    height:72px;
 
     display:flex;
 
@@ -80,51 +87,63 @@ header{
 
     align-items:center;
 
-    border-radius:50%;
+}
+
+.crest img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
 
 }
 
-/* =========================
-   MAIN LAYOUT
-========================= */
+/* ===================================================
+   PAGE LAYOUT
+=================================================== */
 
 .content{
 
-    flex:1;
-
     display:flex;
+
+    height:calc(100vh - 125px);
 
 }
 
-/* =========================
+/* ===================================================
    SIDEBAR
-========================= */
+=================================================== */
 
 aside{
 
-    width:260px;
+    width:280px;
 
     background:#111;
 
-    color:white;
+    color:#fff;
 
-    padding:25px;
+    padding:20px;
 
     display:flex;
 
     flex-direction:column;
 
-    gap:25px;
+    gap:18px;
 
 }
 
-.dragon{
+/* ===================================================
+   MASCOTS
+=================================================== */
 
-    height:180px;
+.mascot{
 
-    background:#222;
+    height:170px;
 
-    border:2px dashed #444;
+    background:#1d1d1d;
+
+    border-radius:14px;
 
     display:flex;
 
@@ -132,9 +151,25 @@ aside{
 
     align-items:center;
 
-    border-radius:12px;
+    overflow:hidden;
+
+    border:1px solid #2e2e2e;
 
 }
+
+.mascot img{
+
+    width:90%;
+
+    height:90%;
+
+    object-fit:contain;
+
+}
+
+/* ===================================================
+   INFORMATION PANELS
+=================================================== */
 
 .info{
 
@@ -148,11 +183,11 @@ aside{
 
     color:#999;
 
-    font-size:14px;
+    font-size:13px;
+
+    letter-spacing:2px;
 
     text-transform:uppercase;
-
-    letter-spacing:1px;
 
     margin-bottom:10px;
 
@@ -160,33 +195,59 @@ aside{
 
 .info h2{
 
-    font-size:28px;
+    font-size:30px;
 
     font-weight:700;
 
-}
+    color:white;
 
-#timer{
-
-    font-size:42px;
-
-    font-weight:bold;
-
-    color:#d71920;
+    line-height:1.1;
 
 }
 
-/* =========================
-   DISPLAY AREA
-========================= */
+/* ===================================================
+   PROGRESS BAR
+=================================================== */
+
+.progress-track{
+
+    width:100%;
+
+    height:8px;
+
+    background:#2d2d2d;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+    margin-top:10px;
+
+}
+
+#progressBar{
+
+    width:100%;
+
+    height:100%;
+
+    background:#d71920;
+
+    transform-origin:left center;
+
+}
+
+/* ===================================================
+   DISPLAY
+=================================================== */
 
 main{
 
     flex:1;
 
-    padding:25px;
+    padding:20px;
 
-    background:#e5e5e5;
+    background:#e8e8e8;
 
 }
 
@@ -196,17 +257,19 @@ main{
 
     height:100%;
 
-    border:none;
-
     background:white;
 
-    border-radius:12px;
+    border:none;
+
+    border-radius:14px;
+
+    box-shadow:0 6px 20px rgba(0,0,0,.12);
 
 }
 
-/* =========================
+/* ===================================================
    FOOTER
-========================= */
+=================================================== */
 
 footer{
 
@@ -218,40 +281,72 @@ footer{
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
+
+    overflow:hidden;
+
+}
+
+/* ===================================================
+   TICKER
+=================================================== */
+
+.ticker{
+
+    width:100%;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+}
+
+#tickerText{
+
+    display:inline-block;
+
+    padding-left:100%;
+
+    animation:ticker 30s linear infinite;
 
     font-size:14px;
 
-}
-
-/* ==========================================
-   Progress Bar
-========================================== */
-
-.progress-track {
-
-    width: 100%;
-    height: 6px;
-
-    background: #2d2d2d;
-
-    border-radius: 999px;
-
-    overflow: hidden;
-
-    margin-top: 16px;
+    letter-spacing:.5px;
 
 }
 
-#progressBar {
+@keyframes ticker{
 
-    width: 100%;
-    height: 100%;
+    from{
 
-    background: #d71920;
+        transform:translateX(0);
 
-    transition: width 1s linear;
+    }
+
+    to{
+
+        transform:translateX(-100%);
+
+    }
+
+}
+
+/* ===================================================
+   FADE EFFECT
+=================================================== */
+
+.fade-out{
+
+    opacity:0;
+
+    transition:opacity .35s ease;
+
+}
+
+.fade-in{
+
+    opacity:1;
+
+    transition:opacity .35s ease;
 
 }

@@ -3,96 +3,160 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Match Flow</title>
+    <title>Match Flow</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<header>
+    <!-- ==========================
+         HEADER
+    =========================== -->
 
-<div class="logo">
+    <header>
 
-<h1>Match Flow</h1>
+        <div class="logo">
 
-<p>Cardigan Town FC Summer Festival</p>
+            <!-- Replace with your Match Flow logo later -->
+            <h1>Match Flow</h1>
 
-</div>
+            <p>Cardigan Town FC Summer Festival</p>
 
-<div class="crest">
+        </div>
 
-Club Crest
+        <div class="crest">
 
-</div>
+            <!-- Replace with club crest PNG -->
+            <img src="assets/images/club-crest.png"
+                 alt="Club Crest"
+                 onerror="this.style.display='none';">
 
-</header>
+        </div>
 
-<div class="content">
+    </header>
 
-<aside>
+    <!-- ==========================
+         MAIN CONTENT
+    =========================== -->
 
-<div class="dragon">
+    <div class="content">
 
-Dragon Mascot
+        <!-- ==========================
+             SIDEBAR
+        =========================== -->
 
-</div>
+        <aside>
 
-<div class="info">
+            <!-- Tournament Mascot -->
 
-    <h3>NOW SHOWING</h3>
+            <div class="mascot tournament">
 
-    <h2 id="currentDivision">
-        Loading...
-    </h2>
+                <img src="assets/images/tournament-mascot.png"
+                     alt="Tournament Mascot"
+                     onerror="this.style.display='none';">
 
-</div>
+            </div>
 
-<div class="info">
+            <!-- LIVE -->
 
-    <h3>COMING UP</h3>
+            <div class="info">
 
-    <h2 id="nextDivision">
-        Loading...
-    </h2>
+                <h3>LIVE</h3>
 
-</div>
+                <h2 id="currentDivision">
 
-<div class="info">
+                    Loading...
 
-    <h3>DISPLAY PROGRESS</h3>
+                </h2>
 
-    <div class="progress-track">
-        <div id="progressBar"></div>
+            </div>
+
+            <!-- NEXT -->
+
+            <div class="info">
+
+                <h3>NEXT</h3>
+
+                <h2 id="nextDivision">
+
+                    Loading...
+
+                </h2>
+
+            </div>
+
+            <!-- Progress -->
+
+            <div class="info">
+
+                <h3>DISPLAY PROGRESS</h3>
+
+                <div class="progress-track">
+
+                    <div id="progressBar"></div>
+
+                </div>
+
+            </div>
+
+            <!-- Match Flow Mascot -->
+
+            <div class="mascot matchflow">
+
+                <img src="assets/images/matchflow-dragon.png"
+                     alt="Match Flow Dragon"
+                     onerror="this.style.display='none';">
+
+            </div>
+
+        </aside>
+
+        <!-- ==========================
+             DISPLAY
+        =========================== -->
+
+        <main>
+
+            <iframe
+
+                id="leagueFrame"
+
+                title="Tournament Display"
+
+                loading="eager"
+
+                allowfullscreen>
+
+            </iframe>
+
+        </main>
+
     </div>
 
-</div>
+    <!-- ==========================
+         FOOTER
+    =========================== -->
 
-</aside>
+    <footer>
 
-<main>
+        <div class="ticker">
 
-<iframe
-    id="leagueFrame"
-    src="https://cardigantownfc.torneopal.com/taso/sarja.php?turnaus=482_0004&sarja=U6"
-    title="League Table">
-</iframe>
+            <div id="tickerText">
 
-</main>
+                Welcome to the Cardigan Town FC Summer Festival
 
-</div>
+            </div>
 
-<footer>
+        </div>
 
-Powered by Match Flow
+    </footer>
 
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
