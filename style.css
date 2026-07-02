@@ -1,6 +1,6 @@
 /* ===================================================
-   MATCH FLOW v1.0
-   Cardigan Town FC Tournament Display
+   MATCH FLOW v1.1.1
+   Broadcast Layout
 =================================================== */
 
 *{
@@ -17,7 +17,7 @@ body{
 
     font-family:Arial, Helvetica, sans-serif;
 
-    background:#ececec;
+    background:#e6e6e6;
 
 }
 
@@ -27,263 +27,72 @@ body{
 
 header{
 
-    height:85px;
+    height:72px;
 
-    background:#ffffff;
+    background:#111;
 
-    border-bottom:5px solid #d71920;
+    border-bottom:3px solid #D71920;
 
     display:flex;
+
+    align-items:center;
 
     justify-content:space-between;
 
-    align-items:center;
-
-    padding:0 30px;
-
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    padding:0 20px;
 
 }
 
-.logo{
+.header-logo,
+.header-crest{
+
+    width:58px;
+    height:58px;
 
     display:flex;
-
-    flex-direction:column;
-
-}
-
-.logo h1{
-
-    font-size:34px;
-
-    color:#111;
-
-    text-transform:uppercase;
-
-    letter-spacing:2px;
-
-}
-
-.logo p{
-
-    color:#666;
-
-    font-size:14px;
-
-    margin-top:4px;
-
-}
-
-.crest{
-
-    width:72px;
-
-    height:72px;
-
-    display:flex;
-
     justify-content:center;
-
     align-items:center;
+
+    flex-shrink:0;
 
 }
 
-.crest img{
+.header-logo img,
+.header-crest img{
 
     width:100%;
-
     height:100%;
-
     object-fit:contain;
 
 }
 
-/* ===================================================
-   PAGE LAYOUT
-=================================================== */
-
-.content{
-
-    display:flex;
-
-    height:calc(100vh - 125px);
-
-}
-
-/* ===================================================
-   SIDEBAR
-=================================================== */
-
-aside{
-
-    width:280px;
-
-    background:#111;
-
-    color:#fff;
-
-    padding:20px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:18px;
-
-}
-
-/* ===================================================
-   MASCOTS
-=================================================== */
-
-.mascot{
-
-    height:170px;
-
-    background:#1d1d1d;
-
-    border-radius:14px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    overflow:hidden;
-
-    border:1px solid #2e2e2e;
-
-}
-
-.mascot img{
-
-    width:90%;
-
-    height:90%;
-
-    object-fit:contain;
-
-}
-
-/* ===================================================
-   INFORMATION PANELS
-=================================================== */
-
-.info{
-
-    border-top:1px solid #333;
-
-    padding-top:15px;
-
-}
-
-.info h3{
-
-    color:#999;
-
-    font-size:13px;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-
-    margin-bottom:10px;
-
-}
-
-.info h2{
-
-    font-size:30px;
-
-    font-weight:700;
-
-    color:white;
-
-    line-height:1.1;
-
-}
-
-/* ===================================================
-   PROGRESS BAR
-=================================================== */
-
-.progress-track{
-
-    width:100%;
-
-    height:8px;
-
-    background:#2d2d2d;
-
-    border-radius:999px;
-
-    overflow:hidden;
-
-    margin-top:10px;
-
-}
-
-#progressBar{
-
-    width:100%;
-
-    height:100%;
-
-    background:#d71920;
-
-    transform-origin:left center;
-
-}
-
-/* ===================================================
-   DISPLAY
-=================================================== */
-
-main{
+.header-title{
 
     flex:1;
 
-    padding:20px;
-
-    background:#e8e8e8;
-
-}
-
-#leagueFrame{
-
-    width:100%;
-
-    height:100%;
-
-    background:white;
-
-    border:none;
-
-    border-radius:14px;
-
-    box-shadow:0 6px 20px rgba(0,0,0,.12);
-
-}
-
-/* ===================================================
-   FOOTER
-=================================================== */
-
-footer{
-
-    height:40px;
-
-    background:#111;
+    text-align:center;
 
     color:white;
 
-    display:flex;
+}
 
-    align-items:center;
+.header-title h1{
 
-    overflow:hidden;
+    font-size:28px;
+    font-weight:700;
+    line-height:1;
+
+}
+
+.header-title p{
+
+    margin-top:4px;
+
+    font-size:13px;
+
+    color:#cfcfcf;
+
+    letter-spacing:1px;
 
 }
 
@@ -291,13 +100,19 @@ footer{
    TICKER
 =================================================== */
 
-.ticker{
+.ticker-bar{
 
-    width:100%;
+    height:28px;
+
+    background:#1c1c1c;
+
+    border-bottom:1px solid #333;
+
+    display:flex;
+
+    align-items:center;
 
     overflow:hidden;
-
-    white-space:nowrap;
 
 }
 
@@ -305,13 +120,17 @@ footer{
 
     display:inline-block;
 
+    white-space:nowrap;
+
     padding-left:100%;
 
-    animation:ticker 30s linear infinite;
+    animation:ticker 35s linear infinite;
 
-    font-size:14px;
+    font-size:13px;
 
-    letter-spacing:.5px;
+    font-weight:600;
+
+    color:white;
 
 }
 
@@ -332,7 +151,193 @@ footer{
 }
 
 /* ===================================================
-   FADE EFFECT
+   CONTENT
+=================================================== */
+
+.content{
+
+    display:flex;
+
+    height:calc(100vh - 134px);
+
+}
+
+/* ===================================================
+   SIDEBAR
+=================================================== */
+
+aside{
+
+    width:285px;
+
+    background:#111;
+
+    color:white;
+
+    padding:15px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+/* ===================================================
+   MASCOTS
+=================================================== */
+
+.mascot{
+
+    height:135px;
+
+    background:#1d1d1d;
+
+    border-radius:12px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+}
+
+.mascot img{
+
+    width:88%;
+
+    height:88%;
+
+    object-fit:contain;
+
+}
+
+/* ===================================================
+   INFO
+=================================================== */
+
+.info{
+
+    border-top:1px solid #2f2f2f;
+
+    padding-top:10px;
+
+}
+
+.info h3{
+
+    color:#8c8c8c;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    margin-bottom:6px;
+
+}
+
+.info h2{
+
+    color:white;
+
+    font-size:24px;
+
+    line-height:1.1;
+
+}
+
+/* ===================================================
+   PROGRESS
+=================================================== */
+
+.progress-track{
+
+    width:100%;
+
+    height:8px;
+
+    background:#2c2c2c;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+#progressBar{
+
+    width:100%;
+
+    height:100%;
+
+    background:#D71920;
+
+    transform-origin:left center;
+
+}
+
+/* ===================================================
+   MAIN DISPLAY
+=================================================== */
+
+main{
+
+    flex:1;
+
+    padding:15px;
+
+    background:#d9d9d9;
+
+}
+
+#leagueFrame{
+
+    width:100%;
+
+    height:100%;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:white;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.18);
+
+}
+
+/* ===================================================
+   FOOTER
+=================================================== */
+
+footer{
+
+    height:34px;
+
+    background:#111;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+footer img{
+
+    height:22px;
+
+    width:auto;
+
+}
+
+/* ===================================================
+   FADE
 =================================================== */
 
 .fade-out{
